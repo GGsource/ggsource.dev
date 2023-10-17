@@ -10,11 +10,37 @@
     <link rel="icon" href="resources/images/GG.png" />
   </head>
   <body>
-    <h1>Welcome to my twisted mind....</h1>
-    <img
+    <!-- <h1>Welcome to my twisted mind....</h1> -->
+    <!-- <img
       id="jonkler"
       src= "resources/images/dear.gif"
       alt="its da jonkler baby!"
-    />
+    /> -->
+
+    <!-- Welcome card at the center -->
+    <div id="welcomeCard">
+      <div id="welcomeText">Welcome to Gnostinaut</div>
+    </div>
+
+    <!-- Load in Particle.js Board -->
+    <div id="particle-js"></div>
+    <script src="vendors/particles-js/particles.js"></script>
+    <script>
+      window.onload = function () {
+        particlesJS.load("particle-js", "vendors/particles-js/particlesjs-config.json", function () {
+          console.log("particlesjs-config.json loaded...");
+        }
+      );
+    }
+    </script>
+
+    <!-- create header bar with Home/About/Projects/Art/RankUp -->
+    <div id="tabBar">
+      <tab id="homeTab" class="tab" onclick="window.location.href='index.php'">Home</tab>
+      <tab id="aboutTab" class="tab" onclick="window.location.href='about.php'">About</tab>
+      <tab id="projectsTab" class="tab" onclick="window.location.href='projects.php'">Projects</tab>
+      <tab id="artTab" class="tab" onclick="window.location.href='art.php'">Art</tab>
+      <tab id="rankUpTab" class="tab" onclick="window.location.href='rankUp.php'">RankUp</tab>
+    </div>
   </body>
 </html>

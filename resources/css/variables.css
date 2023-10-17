@@ -1,0 +1,10 @@
+:root {
+    --primary: rgba(190, 190, 190, 0.9);
+    --bright: white;
+    --radius: 30px;
+    --glass: #00000080;
+    --bg: #140505;
+    --thickness: 3px;
+    --border: var(--thickness) solid var(--primary);
+    --brightBorder: var(--thickness) solid var(--bright);
+}
