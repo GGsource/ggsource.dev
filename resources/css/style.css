@@ -1,0 +1,26 @@
+#jonkler{
+    /* Make the gif be centered  */
+    margin: 0 auto;
+    display: block;
+    /* Make the gif take up all available vertical space, adapting to changes in window size and accounting for other items being on screen */
+    height: 100vh;
+
+
+}
+
+h1{
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+body{
+    background-color: #000515;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
