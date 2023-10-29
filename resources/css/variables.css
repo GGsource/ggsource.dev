@@ -1,10 +1,17 @@
 :root {
-    --primary: rgba(190, 190, 190, 0.9);
-    --bright: white;
+    --primary: rgba(22, 185, 0, 0.9);
+    --bright: rgb(0, 255, 21);
     --radius: 30px;
-    --glass: #00000080;
+    --glass: #00350b80;
     --bg: #140505;
-    --thickness: 3px;
+    --bg2: #441216;
+    --thickness: 1px;
     --border: var(--thickness) solid var(--primary);
     --brightBorder: var(--thickness) solid var(--bright);
+    --glassGradient: linear-gradient(15deg, rgb(0, 14, 0) 0%, var(--glass) 100%);
+
+    /* Logo Palette */
+    --logoBg: #5c0202b2;
+    --logoPrimary: #961a1a;
+    --logoHighlight: #f12e2e;
 }

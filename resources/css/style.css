@@ -4,51 +4,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: var(--primary);
 }
-
-#jonkler {
-  /* Make the gif be centered  */
-  display: block;
-  /* Make the gif take up all available vertical space, adapting to changes in window size and accounting for other items being on screen */
-  height: 100vh;
-}
-
-#welcomeCard {
-  background-color: var(--glass);
-  height: 30%;
-  width: 30%;
-  /* center its child div */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Round corners */
-  border-radius: var(--radius);
-  /* Center the card itself */
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /* border: var(--thickness) solid var(--textColor); */
-  padding: 10px;
-  /* Prevent text from being selected */
-  user-select: none;
-}
-
-#welcomeText {
-  font-size: 4vw;
-  text-align: center;
-}
-
 body {
-  background-color: var(--bg);
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  background: linear-gradient(15deg, var(--bg) 0%, var(--bg) 50%, var(--bg2) 100%);
 }
 
 #particle-js {
@@ -62,20 +21,57 @@ body {
   height: 100vh;
 }
 
+#overlays {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Center children and anchor to top*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Add spacing between children */
+  gap: 5vh;
+  /* add space at bottom */
+  padding-bottom: 5vh;
+}
+
+#welcomeCard {
+  /* center its child div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Round corners */
+  border-radius: var(--radius);
+  /* border: var(--thickness) solid var(--textColor); */
+  padding: 10px;
+  /* Prevent text from being selected */
+  user-select: none;
+  /* Make the card background gradient */
+
+  flex: 1;
+}
+
+#welcomeText {
+  font-size: 4vw;
+  text-align: center;
+}
+
 #tabBar {
   width: 100%;
   height: 10%;
-  position: absolute;
-  background-color: var(--glass);
   /* Round bottom corners */
   border-radius: 0 0 var(--radius) var(--radius);
   /* Make the child tabs share the space and fill it together */
   display: flex;
+
 }
 
 .tab {
-  /* Make the tabs share the space of their parent and fill it together */
-  flex-grow: 1;
+  /* Force each tab to be equal width */
+  flex: 1;
   /* Center the text */
   display: flex;
   justify-content: center;
@@ -84,13 +80,20 @@ body {
   font-size: 1.5vw;
   /* Prevent Text from being selected */
   user-select: none;
+  /* Add space between each tab*/
+  margin: 0 4px;
+  /* Set height so transition can change it */
+  height: 100%;
+  /* Give animation for changing */
+  transition: height 0.5s ease;
 }
 
 /* Make tabs change color on hover */
 .tab:hover {
-  background-color: var(--glass);
   cursor: pointer;
   color: var(--bright);
+  /* Make tab become slightly taller when hovered */
+  height: 120%;
 }
 
 /* Make tabs change color on click */
@@ -99,23 +102,19 @@ body {
 }
 
 /* Round the corner on the bottom left of the first tab*/
-.tab:first-child:hover,
-.tab:first-child:active,
-.tab:first-child {
-  border-radius: 0 0 0 var(--radius);
-}
-
-/* Round the corner on the bottom right of the last tab*/
-.tab:last-child:hover,
-.tab:last-child:active,
-.tab:last-child {
-  border-radius: 0 0 var(--radius) 0;
+.tab:hover,
+.tab:active,
+.tab {
+  /* Round bottom two corners */
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 
 /* Add border to the tabs and the welcome card */
 .tab,
 #welcomeCard {
   border: var(--border);
+  color: var(--primary);
+  background: var(--glassGradient);
 }
 
 /* Make the border brighter on hover */
@@ -124,8 +123,17 @@ body {
   border: var(--brightBorder);
 }
 
+
+
 /* For smaller mobile screens */
-@media (max-width: 600px) {
+@media (max-aspect-ratio: 2/3) {
+  #overlays {
+    gap: 0vh;
+    flex-direction: column-reverse;
+    /* Remove bottom padding */
+    padding-bottom: 0;
+  }
+  
   /* Increase size of Card */
   #welcomeCard {
     width: 90%;
@@ -134,19 +142,54 @@ body {
   #welcomeText {
     font-size: 12vw;
   }
+
+  /* Make Logo take up more space */
+  #logoAnchor {
+    width: 70vh;
+  }
+
   /* Make tabs go vertically instead */
   #tabBar {
     flex-direction: column;
+    height: 50vh;
+    gap: 10px;
+  }
+  .tab{
+    /* Make text larger */
+    font-size: 5vw;
   }
   /* Fix incorrectly rounded corners now that tab direction has changed */
-  .tab:first-child, .tab:first-child:active, .tab:first-child:hover {
-    border-radius: 0 0 0 0;
+  .tab, .tab:active, .tab:hover {
+    border-radius: var(--radius) var(--radius) var(--radius) var(--radius);
   }
-  .tab:last-child, .tab:last-child:active, .tab:last-child:hover {
-    border-radius: 0 0 var(--radius) var(--radius);
-  }
-  .tab {
-    height: 10vh;
-  }
-  
+}
+
+#logoAnchor{
+  width: 30vh;
+  height: 30vh;
+    /* Center child */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+  grid-area: 1/1; 
+}
+
+#baseHex {
+  stroke: var(--logoHighlight);
+  fill: var(--logoBg);
+  /* Give it a border */
+  stroke-width: 2vh;
+  vector-effect: non-scaling-stroke;
+  /* Make stroke rounded */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#canvas {
+  width: 100%;
+  z-index: 30;
+  grid-area: 1/1;
 }

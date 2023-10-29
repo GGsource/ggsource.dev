@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GGSource</title>
-    <!-- include css -->
-    <link rel="stylesheet" href="resources/css/style.css" />
-    <!-- Set browser icon -->
-    <link rel="icon" href="resources/images/GG.png" />
-  </head>
-  <body>
-    <!-- <h1>Welcome to my twisted mind....</h1> -->
-    <!-- <img
-      id="jonkler"
-      src= "resources/images/dear.gif"
-      alt="its da jonkler baby!"
-    /> -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GGSource</title>
+        <!-- include css -->
+        <link rel="stylesheet" href="resources/css/style.css" />
+        <!-- Set browser icon -->
+        <link rel="icon" href="resources/images/GG.png" />
+    </head>
 
-    <!-- Welcome card at the center -->
-    <div id="welcomeCard">
-      <div id="welcomeText">Welcome to GGSource</div>
-    </div>
-
-    <!-- Load in Particle.js Board -->
-    <div id="particle-js"></div>
-    <script src="vendors/particles-js/particles.js"></script>
-    <script>
-      window.onload = function () {
-        particlesJS.load("particle-js", "vendors/particles-js/particlesjs-config.json", function () {
-          console.log("particlesjs-config.json loaded...");
-        }
-      );
-    }
-    </script>
-
-    <!-- create header bar with Home/About/Projects/Art/RankUp -->
-    <div id="tabBar">
-      <tab id="homeTab" class="tab" onclick="window.location.href='about.html'">Home</tab>
-      <tab id="aboutTab" class="tab" onclick="window.location.href='about.html'">About</tab>
-      <tab id="projectsTab" class="tab" onclick="window.location.href='about.html'">Projects</tab>
-      <tab id="artTab" class="tab" onclick="window.location.href='about.html'">Art</tab>
-      <tab id="rankUpTab" class="tab" onclick="window.location.href='about.html'">RankUp</tab>
-    </div>
-  </body>
+    <body>
+        <!-- Load in Particle.js Board -->
+        <div id="particle-js"></div>
+        <script src="vendors/particles-js/particles.js"></script>
+        <script>
+            window.onload = function () {
+                particlesJS.load(
+                    "particle-js",
+                    "vendors/particles-js/particlesjs-config.json",
+                    function () {
+                        console.log("particlesjs-config.json loaded...");
+                    }
+                );
+            };
+        </script>
+        <div id="overlays">
+            <!-- create header bar with Home/About/Projects/Art/RankUp -->
+            <div id="tabBar">
+                <tab
+                    id="homeTab"
+                    class="tab"
+                    onclick="window.location.href='about/index.html'"
+                    >Home</tab
+                >
+                <tab
+                    id="aboutTab"
+                    class="tab"
+                    onclick="window.location.href='about/index.html'"
+                    >About</tab
+                >
+                <tab
+                    id="projectsTab"
+                    class="tab"
+                    onclick="window.location.href='about/index.html'"
+                    >Projects</tab
+                >
+                <tab
+                    id="artTab"
+                    class="tab"
+                    onclick="window.location.href='about/index.html'"
+                    >Art</tab
+                >
+                <tab
+                    id="tutorialTab"
+                    class="tab"
+                    onclick="window.location.href='about/index.html'"
+                    >Tutorials</tab
+                >
+                <tab
+                    id="rankUpTab"
+                    class="tab"
+                    onclick="window.location.href='about/index.html'"
+                    >RankUp</tab
+                >
+            </div>
+            <!-- Custom Site Logo -->
+            <div id="logoAnchor">
+                <canvas id="canvas"></canvas>
+                <svg id="logo" viewBox="-50 -50 100 100">
+                    <polygon id="baseHex" />
+                </svg>
+                <script src="resources/js/logo.js"></script>
+            </div>
+            <!-- Welcome card at the center -->
+            <div id="welcomeCard">
+                <div id="welcomeText">Welcome to GGSource</div>
+            </div>
+        </div>
+    </body>
 </html>
