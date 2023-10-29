@@ -35,6 +35,7 @@ baseHex.setAttribute("points", cartesianPoints.map(function (point) {
 }).join(" "));
 
 //TODO: Convert this to be drawn on the canvas instead of SVG
+// TODO: once this is done, save the finished canvas image and set it as the sites favicon
 
 
 // Drawing on the canvas on top of the SVG
