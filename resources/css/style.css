@@ -33,7 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   /* Add spacing between children */
-  gap: 5vh;
+  gap: 2vh;
   /* add space at bottom */
   padding-bottom: 5vh;
 }
@@ -112,18 +112,10 @@ body {
 /* Add border to the tabs and the welcome card */
 .tab,
 #welcomeCard {
-  border: var(--border);
+  /* border: var(--border); */
   color: var(--primary);
   background: var(--glassGradient);
 }
-
-/* Make the border brighter on hover */
-.tab:hover,
-#welcomeCard:hover {
-  border: var(--brightBorder);
-}
-
-
 
 /* For smaller mobile screens */
 @media (max-aspect-ratio: 2/3) {
@@ -165,27 +157,12 @@ body {
 }
 
 #logoAnchor{
-  width: 30vh;
-  height: 30vh;
+  width: 40vh;
+  height: 40vh;
     /* Center child */
     display: grid;
     justify-content: center;
     align-items: center;
-}
-
-#logo {
-  grid-area: 1/1; 
-}
-
-#baseHex {
-  stroke: var(--logoHighlight);
-  fill: var(--logoBg);
-  /* Give it a border */
-  stroke-width: 2vh;
-  vector-effect: non-scaling-stroke;
-  /* Make stroke rounded */
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 #canvas {

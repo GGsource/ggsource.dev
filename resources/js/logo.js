@@ -1,11 +1,16 @@
-// Get our polygon element
-baseHex = document.getElementById("baseHex");
+// Drawing on the canvas on top of the SVG
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const canvasParent = canvas.parentElement;
+canvas.width = canvasParent.clientWidth;
+canvas.height = canvasParent.clientHeight;
+ctx.translate(canvas.width / 2, canvas.height / 2);
 
 // Let's create 6 points for our hexagon
 // To make it easier, make them in polar coordinates then convert to cartesian
 // Top & bottom are pointy ends
 // diameter of hex
-var diameter = 45;
+var diameter = canvas.width / 2.2;
 var polarPoints = [
     [90, diameter],
     [30, diameter],
@@ -30,31 +35,40 @@ for (var i = 0; i < polarPoints.length; i++) {
     cartesianPoints.push(polarToCartesian(0, 0, polarPoints[i][1], polarPoints[i][0]));
 }
 
-baseHex.setAttribute("points", cartesianPoints.map(function (point) {
-    return point.x + "," + point.y;
-}).join(" "));
+// Draw the hexagon
+ctx.beginPath();
+// move cursor to first position
+ctx.moveTo(cartesianPoints[0].x, cartesianPoints[0].y);
+// draw the rest of the points
+for (var i = 1; i < cartesianPoints.length; i++) {
+    ctx.lineTo(cartesianPoints[i].x, cartesianPoints[i].y);
+}
+
+ctx.lineWidth = 30;
+ctx.strokeStyle = "#f12e2e";
+// round corners
+ctx.lineCap = "round";
+ctx.lineJoin = "round";
+// close the path
+ctx.closePath();
+ctx.fillStyle = "#5c0202b2";
+ctx.fill();
+// Apply the stroke
+ctx.stroke();
+// fill the hexagon
 
 //TODO: Convert this to be drawn on the canvas instead of SVG
 // TODO: once this is done, save the finished canvas image and set it as the sites favicon
 
 
-// Drawing on the canvas on top of the SVG
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-const canvasParent = canvas.parentElement;
-canvas.width = canvasParent.clientWidth;
-canvas.height = canvasParent.clientHeight;
-ctx.translate(canvas.width / 2, canvas.height / 2);
-
-
 // declare where the points are for one of the G's that we will draw on the logo. In polar coordinates
-var innerDiameter = diameter * 2.8;
+var innerDiameter = diameter * 0.8;
 var gPoints = [
-    [-110, innerDiameter / 2.1], // 0
-    [-95, innerDiameter - 8], // 1
+    [-103, innerDiameter / 2.1], // 0
+    [-95, innerDiameter - 10], // 1
     [-150, innerDiameter], // 2
     [-210, innerDiameter], // 3
-    [-265, innerDiameter - 8], // 4
+    [-265, innerDiameter - 10], // 4
     [-260, innerDiameter / 8], // 5
     [-210, innerDiameter * 3 / 5], // 6
 ];

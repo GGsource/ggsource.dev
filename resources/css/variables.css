@@ -1,14 +1,14 @@
 :root {
-    --primary: rgba(22, 185, 0, 0.9);
-    --bright: rgb(0, 255, 21);
+    --primary: #e0e0e0;
+    --bright: #ffffff;
     --radius: 30px;
-    --glass: #00350b80;
+    --glass: #00000080;
     --bg: #140505;
     --bg2: #441216;
     --thickness: 1px;
     --border: var(--thickness) solid var(--primary);
     --brightBorder: var(--thickness) solid var(--bright);
-    --glassGradient: linear-gradient(15deg, rgb(0, 14, 0) 0%, var(--glass) 100%);
+    --glassGradient: linear-gradient(15deg, rgb(0, 0, 0) 0%, var(--glass) 100%);
 
     /* Logo Palette */
     --logoBg: #5c0202b2;
