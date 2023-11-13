@@ -23,45 +23,6 @@
             };
         </script>
         <div id="overlays">
-            <!-- create header bar with Home/About/Projects/Art/RankUp -->
-            <div id="tabBar">
-                <tab
-                    id="homeTab"
-                    class="tab"
-                    onclick="window.location.href=''"
-                    >Home</tab
-                >
-                <tab
-                    id="aboutTab"
-                    class="tab"
-                    onclick="window.location.href='pages/about/'"
-                    >About</tab
-                >
-                <tab
-                    id="projectsTab"
-                    class="tab"
-                    onclick="window.location.href='pages/projects/'"
-                    >Projects</tab
-                >
-                <tab
-                    id="artTab"
-                    class="tab"
-                    onclick="window.location.href='pages/art/'"
-                    >Art</tab
-                >
-                <tab
-                    id="tutorialTab"
-                    class="tab"
-                    onclick="window.location.href='pages/tutorials/'"
-                    >Tutorials</tab
-                >
-                <tab
-                    id="rankUpTab"
-                    class="tab"
-                    onclick="window.location.href='pages/rankup/'"
-                    >RankUp</tab
-                >
-            </div>
             <!-- Custom Site Logo -->
             <div id="logoAnchor">
                 <canvas id="canvas"></canvas>
@@ -71,6 +32,20 @@
             <div id="welcomeCard">
                 <div id="welcomeText">Welcome to GGSource</div>
             </div>
+            <!-- create header bar with Home/About/Projects/Art/RankUp -->
+            <script>
+                fetch("resources/html/tabBar.html")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document
+                            .querySelector("#logoAnchor")
+                            .insertAdjacentHTML("beforebegin", data);
+                    });
+            </script>
         </div>
     </body>
 </html>
+
+<!-- IDEA: Use Text Masking somewhere, its cool. -->
+<!-- IDEA: Animate the logo fading in -->
+<!-- IDEA: Animate top buttons extending from 0 height to full height on page load -->

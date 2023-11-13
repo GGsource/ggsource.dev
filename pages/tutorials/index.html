@@ -5,22 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>GGSource - Tutorials</title>
         <link rel="stylesheet" href="../../resources/css/style.css" />
+        <link rel="stylesheet" href="../../resources/css/subpage.css" />
     </head>
     <body>
-        <p>Tutorials page under construction.</p>
-        <!-- Create button to return to home page -->
-        <button onclick="window.location.href='../../'">Home</button>
-
-        <!-- Load in Particle.js Board -->
-        <div id="particle-js"></div>
-        <script src="../../vendors/particles-js/particles.js"></script>
-        <script>
-            window.onload = function () {
-                particlesJS.load(
-                    "particle-js",
-                    "../../vendors/particles-js/particlesjs-config.json"
-                );
-            };
-        </script>
+        <div id="overlays">
+            <!-- Header -->
+            <div id="titleHeader">
+                <div id="titleHeaderText">Tutorials</div>
+            </div>
+            <!-- Add TabBar to top of page -->
+            <script>
+                fetch("../../resources/html/tabBar.html")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document
+                            .querySelector("#titleHeader")
+                            .insertAdjacentHTML("beforebegin", data);
+                    });
+            </script>
+        </div>
     </body>
 </html>

@@ -7,24 +7,32 @@
         <link rel="stylesheet" href="../../resources/css/style.css" />
     </head>
     <body>
-        <p>About page not yet implemented. Please return to home page.</p>
-        <!-- Create button to return to home page -->
-        <button onclick="window.location.href='../../'">Home</button>
-
-        <!-- Load in Particle.js Board -->
-        <div id="particle-js"></div>
-        <script src="../../vendors/particles-js/particles.js"></script>
-        <script>
-            window.onload = function () {
-                particlesJS.load(
-                    "particle-js",
-                    "../../vendors/particles-js/particlesjs-config.json"
-                );
-            };
-        </script>
+        <div id="overlays">
+            <!-- Header -->
+            <div id="titleHeader">
+                <div id="titleHeaderText">About Me</div>
+            </div>
+            <!-- Summary -->
+            <!-- Skill Domain -->
+            <!-- Interests & Hobbies -->
+            <!-- Recommendations & Tutorials -->
+            <!-- Contact Me -->
+            <!-- Add TabBar to top of page -->
+            <script>
+                fetch("../../resources/html/tabBar.html")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document
+                            .querySelector("#titleHeader")
+                            .insertAdjacentHTML("beforebegin", data);
+                    });
+            </script>
+        </div>
     </body>
 </html>
 
-<!-- FIXME: Gradient is causing banding on this page, as if its being repeated every inch in height -->
-
 <!-- FIXME: Favicon is not specified for these sub pages. Set it at root directory. -->
+
+<!-- IDEA: Have bars for each language to show how familiar I am -->
+<!-- IDEA: Make these bars be animated -->
+<!-- IDEA: Have page color gradually change from section to section :D -->
