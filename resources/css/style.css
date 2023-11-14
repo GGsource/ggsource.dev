@@ -40,9 +40,7 @@ body {
     align-items: center;
     /* Add spacing between children */
     gap: 2vh;
-    /* add space at bottom */
-    height: 95vh;
-    padding-bottom: 5vh;
+    height: 100%;
 }
 
 #welcomeCard {
@@ -55,14 +53,12 @@ body {
     padding: 10px;
     /* Prevent text from being selected */
     user-select: none;
-    flex: 1;
-    width: 30vw;
+    max-width: 100%;
 }
 
 #welcomeText {
-    font-size: 4vw;
+    font-size: 4em;
     text-align: center;
-    /* Make text wrap */
 }
 
 #tabBar {

@@ -1,3 +1,147 @@
 /* CSS for subpages */
 
-/* Center paragraphs */
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+#pageContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8vh;
+}
+
+#titleHeaderText {
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+#uicButton {
+    vertical-align: middle;
+    font-weight: bold;
+    background: var(--glassGradient);
+    padding: 0.4em 0.8em;
+    border-top: 0px solid var(--primary);
+    border-left: 0px solid var(--primary);
+    border-right: 0px solid var(--primary);
+    border-radius: var(--radius);
+}
+#uicButton:hover {
+    cursor: pointer;
+    background: var(--chalkRed);
+    color: var(--bright);
+    border-bottom: 2px dotted var(--primary);
+}
+
+#summaryBox {
+    /* Make children list horizontally */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15%;
+    font-size: 1.5em;
+}
+
+#summaryParagraph {
+    /* Center children */
+    display: flex;
+    flex-direction: column;
+}
+
+#summaryImage {
+    max-width: 100%;
+    height: auto;
+}
+
+#contactButton {
+    font-size: larger;
+    color: black;
+    background-color: white;
+    border-radius: var(--radius);
+    width: 30%;
+    padding: 0.2em 0.4em;
+    border: 0px solid var(--primary);
+    /* center horizontally */
+    margin: 0 auto;
+}
+#contactButton:hover {
+    cursor: pointer;
+    color: var(--bright);
+    background-color: var(--chalkOrange);
+}
+
+.toolTip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px dotted var(--chalkRed);
+    color: var(--chalkRed);
+}
+
+.toolTip .toolTipText {
+    font-weight: normal;
+    visibility: hidden;
+    background: var(--glassGradient);
+    color: var(--primary);
+    border-radius: 5px;
+    width: 120px;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -60px;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.toolTip:hover .toolTipText {
+    visibility: visible;
+}
+
+.toolTip .toolTipText::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--glass) transparent transparent transparent;
+}
+
+#abilityBox {
+    display: flex;
+    flex-direction: row;
+    /* Make children take up available room */
+
+    /* Center children */
+    justify-content: center;
+}
+.abilityCol {
+    flex: 1;
+    /* Center children */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerBox {
+    width: 60%;
+}
+
+.abilityTitle {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.abilityTitle,
+.abilityBody {
+    color: var(--chalkGreen);
+}
+
+ul {
+    list-style-type: disc;
+}
