@@ -57,10 +57,6 @@ ctx.fill();
 ctx.stroke();
 // fill the hexagon
 
-// DONE: Convert this to be drawn on the canvas instead of SVG
-// TODO: once this is done, save the finished canvas image and set it as the sites favicon
-
-
 // declare where the points are for one of the G's that we will draw on the logo. In polar coordinates
 var innerRadius = radius * 0.8;
 var gPoints = [
