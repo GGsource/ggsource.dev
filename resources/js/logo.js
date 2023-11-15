@@ -125,3 +125,6 @@ ctx.stroke();
 // link.href = canvasImage;
 
 // link.click();
+
+// TODO: Calculate precise locations where gPoints 1, and 4 should be. 8.5 is a guesstimate.
+// TESTME: Not much point in doing this every time the page loads. Maybe just save the resulting image and use that instead.
