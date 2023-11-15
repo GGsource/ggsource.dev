@@ -5,6 +5,7 @@
     --glass: #00000080;
     --bg: #140505;
     --bg2: #441216;
+    --bg3: #7c1620;
     --glassGradient: linear-gradient(15deg, rgb(0, 0, 0) 0%, var(--glass) 100%);
 
     /* Chalk Palette */

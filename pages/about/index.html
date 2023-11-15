@@ -110,17 +110,17 @@
             </div>
             <!-- Recommendations & Tutorials -->
             <!-- Contact Me -->
+            <!-- Add TabBar to top of page -->
+            <script>
+                fetch("../../resources/html/tabBar.html")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document
+                            .querySelector("#titleHeader")
+                            .insertAdjacentHTML("beforebegin", data);
+                    });
+            </script>
         </div>
-        <!-- Add TabBar to top of page -->
-        <script>
-            fetch("../../resources/html/tabBar.html")
-                .then((response) => response.text())
-                .then((data) => {
-                    document
-                        .querySelector("#pageContent")
-                        .insertAdjacentHTML("beforebegin", data);
-                });
-        </script>
     </body>
 </html>
 
