@@ -71,6 +71,7 @@ body {
     border-radius: 0 0 var(--radius) var(--radius);
     /* Make the child tabs share the space and fill it together */
     display: flex;
+    margin-bottom: 5vh;
 }
 
 .tab {
@@ -97,7 +98,7 @@ body {
     cursor: pointer;
     color: var(--bright);
     /* Make tab become slightly taller when hovered */
-    height: 120%;
+    height: 10vh;
 }
 
 /* Make tabs change color on click */
