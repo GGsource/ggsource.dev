@@ -1,3 +1,3 @@
 # Website Link: [ggsource.dev](https://ggsource.dev)
 
-## ~~[ggsource.github.io](https://ggsource.github.io/)~~
+### Github Pages Link: [ggsource.github.io](https://ggsource.github.io/) (now redirects)
