@@ -44,7 +44,6 @@ body {
     align-items: center;
     /* Add spacing between children */
     gap: 2vh;
-    height: 100vh;
 }
 
 #welcomeCard {
@@ -189,4 +188,32 @@ body {
 }
 ::-webkit-scrollbar-button {
     display: none;
+}
+
+/* Construction Banner for pages that are not finished */
+.constructionBanner {
+    width: 95%;
+    /* Black and yellow striped gradient */
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, var(--conTrans)),
+        rgba(0, 0, 0, var(--conTrans)) 10px,
+        rgb(255, 255, 0, var(--conTrans)) 10px,
+        rgb(255, 255, 0, var(--conTrans)) 20px
+    );
+    /* Center text */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    /* Make text larger */
+    font-size: 2em;
+    color: white;
+    /* center text */
+    text-align: center;
+    /* Outline text in black */
+    text-shadow: 0 0 3px black;
+    border-radius: 10px;
+    padding: 25px;
 }

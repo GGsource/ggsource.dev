@@ -18,7 +18,6 @@ body {
     font-size: 4em;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 0.5em;
 }
 
 #uicButton {
@@ -168,4 +167,29 @@ li {
 #interestBody {
     color: var(--chalkBlue);
     height: 550px;
+}
+
+/* DELETEME: This button style is only on rankup page, which is temporary. */
+
+.wrap {
+    /* Center children */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    padding-top: 5vh;
+}
+#rankText {
+}
+#rankHomeBtn {
+    background: var(--glassGradient);
+    font-size: xx-large;
+    padding: 40px;
+    border-radius: 20px;
+    border: 0px solid black;
+}
+#rankHomeBtn:hover {
+    cursor: pointer;
+    background: var(--chalkRed);
+    color: var(--bright);
 }
