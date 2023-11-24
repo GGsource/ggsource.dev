@@ -67,6 +67,7 @@ body {
     border: 0px solid var(--primary);
     /* center horizontally */
     margin: 0 auto;
+    text-align: center;
 }
 #contactButton:hover {
     cursor: pointer;
@@ -115,22 +116,28 @@ body {
 #abilityBox {
     display: flex;
     flex-direction: row;
-    /* Make children take up available room */
-
-    /* Center children */
-    justify-content: center;
+    color: var(--chalkGreen);
+}
+#interestBox {
+    color: var(--chalkBlue);
+}
+#recommendedBox {
+    color: var(--chalkRed);
+}
+#contactBox {
+    color: var(--chalkOrange);
 }
 .abilityCol {
     flex: 1;
+    gap: 10%;
+}
+.abilityCol,
+.containerBox {
+    width: 50%; /* TODO: Make this smaller */
     /* Center children */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10%;
-}
-
-.containerBox {
-    width: 60%; /* TODO: Make this smaller */
 }
 
 .containerTitle {
@@ -141,32 +148,13 @@ body {
     font-size: 1.5em;
 }
 
-.abilityTitle,
-.abilityBody {
-    color: var(--chalkGreen);
-}
-
-ul {
-    list-style-type: disc;
-}
 li {
     /* Take parent's color */
     color: inherit;
 }
 
-#interestBox {
-    /* Center horizontally */
-    margin: 0 auto;
-    /* Center children */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#interestTitle,
-#interestBody {
-    color: var(--chalkBlue);
-    height: 550px;
+.colorInheritor {
+    color: inherit;
 }
 
 /* DELETEME: This button style is only on rankup page, which is temporary. */
@@ -178,8 +166,6 @@ li {
     align-items: center;
     gap: 2vh;
     padding-top: 5vh;
-}
-#rankText {
 }
 #rankHomeBtn {
     background: var(--glassGradient);
