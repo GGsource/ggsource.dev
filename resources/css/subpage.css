@@ -11,7 +11,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 6vh;
-    height: 100vh;
 }
 
 #titleHeaderText {
@@ -100,11 +99,29 @@ body {
 }
 
 #abilityBox {
-    display: flex;
-    flex-direction: row;
     color: var(--chalkGreen);
 }
-#interestBox {
+#langBox {
+    width: 100%;
+}
+.langRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2%;
+}
+.langCol {
+    /* Share the parent's space evenly */
+    flex: 1;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 5px;
+    /* Add gap */
+    display: flex;
+    flex-direction: column;
+    /* gap: 5%; FIXME: Gap is not properly being respected if it requires increasing height. */
+}
+cont #interestBox {
     color: var(--chalkBlue);
 }
 #recommendedBox {
@@ -130,6 +147,7 @@ body {
 .containerTitle {
     font-size: 2em;
     font-weight: bold;
+    text-align: center;
 }
 .containerBody {
     font-size: 1.5em;
@@ -138,6 +156,7 @@ body {
 li {
     /* Take parent's color */
     color: inherit;
+    margin-left: 1em;
 }
 
 .colorInheritor {
